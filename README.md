@@ -1,7 +1,3 @@
-# Welcome to streamlit
+# Welcome to streamlit ChatGPT like Bot
 
-This is the app you get when you run `streamlit hello`, extracted as its own app.
-
-Edit [Hello.py](./Hello.py) to customize this app to your heart's desire. ❤️
-
-Check it out on [Streamlit Community Cloud](https://st-hello-app.streamlit.app/)
+This is the app similar to ChatGPT interface which uses OpenAI Chat completetion API. The API Interacts with the GPT-3.5-Turbo and GPT-4.0.Turbo model's using the Streamlit app.
