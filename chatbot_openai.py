@@ -2,7 +2,7 @@ import openai
 import streamlit as st
 from streamlit_chat import message
 
-def app():
+def run():
     # Setting page title and header
     st.set_page_config(page_title="Ishanoid", page_icon=":robot_face:")
     st.markdown("<h1 style='text-align: center;'>Ishanoid - a totally harmless chatbot 🤖</h1>", unsafe_allow_html=True)
@@ -114,4 +114,4 @@ def app():
                 #counter_placeholder.write(f"Total cost of this conversation: ${st.session_state['total_cost']:.5f}")
 
 if __name__ == "__main__":
-    app()
+    run()
