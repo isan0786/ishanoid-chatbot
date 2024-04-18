@@ -31,14 +31,21 @@ def run():
 
     # Sidebar - let user choose model, show total cost of current conversation, and let user clear the current conversation
     st.sidebar.title("Sidebar")
-    model_name = st.sidebar.radio("Choose a model:", ("GPT-3.5 Turbo", "GPT-4.0 Turbo"))
+    model_name = st.sidebar.radio("Choose a model:", ("pai-002-rp","pai-001-rp","gpt-3.5-unfiltered","GPT-3.5-turbo", "GPT-4.0-turbo"))
+
     counter_placeholder = st.sidebar.empty()
     #counter_placeholder.write(f"Total cost of this conversation: ${st.session_state['total_cost']:.5f}")
     clear_button = st.sidebar.button("Clear Conversation", key="clear")
 
     # Map model names to OpenAI model IDs
-    if model_name == "GPT-3.5":
-        model = "gpt-3.5-turbo"
+    if model_name == "pai-002-rp":
+        model = "pai-002-rp"
+    elif model_name == "pai-001-rp":
+        model = "pai-001-rp"
+    elif model_name == "gpt-3.5-unfiltered":
+        model = "gpt-3.5-unfiltered"
+    elif model_name == "GPT-3.5-turbo":
+        model = "gpt-3.5-turbo"    
     else:
         model = "gpt-4.0-turbo"
 
@@ -93,7 +100,7 @@ def run():
             st.session_state['total_tokens'].append(total_tokens)
 
             # from https://openai.com/pricing#language-models
-            if model_name == "GPT-3.5":
+            if model_name == "GPT-3.5-turbo":
                 cost = total_tokens * 0.002 / 1000
             else:
                 cost = (prompt_tokens * 0.03 + completion_tokens * 0.06) / 1000
